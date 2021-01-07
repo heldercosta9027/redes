@@ -1,5 +1,5 @@
 <?php
-    $con=new mysqli("localhost", "root", "", "filmes");
+    $con=new mysqli ("localhost", "root", "", "filmes");
     if($con->connect_errno!=0){
         echo "Ocorreu um erro no acesso à base de dados" .$con->connect_error;
         exit;
