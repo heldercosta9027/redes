@@ -14,7 +14,7 @@
         }
         else{
             $sql='select * from filmes where id_filmes = ?';
-            $stm = $con->prpeare($sql);
+            $stm = $con->prepare($sql);
             if($stm!=false){
                 $stm->bind_param('i',$idFilme);
                 $stm->execute();

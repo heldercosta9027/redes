@@ -53,5 +53,7 @@
         }
         }
         else{  
+            echo "<h1> Houve um erro ao processar o seu pedido! <br> Irá ser reencaminhado! </h1>";
+            header {"refresh:5; url=index.php"};
         }  
       }

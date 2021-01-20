@@ -27,6 +27,8 @@ else{
             $stm->close();
             ?>
         <br>
+        <a href="filmes_create.php">Adicionar livros</a>
+        <br>
     </body>
     </html>
 
