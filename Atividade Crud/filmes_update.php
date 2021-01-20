@@ -38,24 +38,20 @@
         else{
             $sql="insert into filmes (titulo, sinopse, idioma, data_lancamento, quantidade) value(?,?,?,?,?);";
             $stm=$con->prepare($sql);
-        }
-        
-        if($stm!=false){
+            if($stm!=false){
             $stm->bind_param("ssssi", $titulo, $sinpse, $idioma, $data_lancamento, $quantidade);
             $stm->execute();
             $stm-execute();
-        
-        $stm->close();
-        
-        echo '<script>alert("Filme alterado com sucesso!!");</script>';
-        echo "Aguarde um momento. A reencaminhar página";
-        header ("refresh:5; url= index.php");
-        }
-        else{
-            
-        }
-        else{
+            $stm->close();
+            echo '<script>alert("Filme alterado com sucesso!!");</script>';
+            echo "Aguarde um momento. A reencaminhar página";
+            header ("refresh:5; url= index.php");
+            echo "<h1> Houve um erro ao processar o seu pedido! <br> Irá ser reencaminhado! </h1>";
+            header ("refresh:5; url=index.php");
             echo "<h1> Houve um erro ao processar o seu pedido! <br> Irá ser reencaminhado! </h1>";
             header ("refresh:5; url=index.php");
         }
-    }
+        }
+        else{  
+        }  
+      }

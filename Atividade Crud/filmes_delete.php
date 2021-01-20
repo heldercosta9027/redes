@@ -16,7 +16,22 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 $stm->execute();
                 $stm-close();
                 echo '<script>alert("Livro eliminado com sucesso");</script>';
+                echo 'Aguarde um momento. A reencamimnhar página';
+                header('refresh:5; url=index.php');
+            }
+            else{
+                echo'<br>';
+                echo ($con->error);
+                echo'<br>';
+                echo "Aguarde um momento. A reencaminhar página";
+                echo'<br>';
+                header("refresh:5;url=index.php");
             }
         }
     }
+    else{
+        echo "<h1>Houve um erro ao processar o seu pedido!<br>Irá ser reencaminhado!</h1>";
+        header("refresh:5;url=index.php");
+    }
 }
+?>
